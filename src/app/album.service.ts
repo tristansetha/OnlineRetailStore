@@ -6,7 +6,6 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class AlbumService {
   albums: FirebaseListObservable<any[]>;
-
   constructor(private database: AngularFireDatabase) { 
     this.albums = database.list('albums');
   }
@@ -15,13 +14,21 @@ export class AlbumService {
     return this.albums;
   }
 
-  getAlbumById(albumId: number) {
-    for (var i = 0; i <= ALBUMS.length - 1; i++) {
-      if (ALBUMS[i].id === albumId) {
-        return ALBUMS[i];
-      }
-    }
+  addAlbum(newAlbum: Album) {
+    this.albums.push(newAlbum);
   }
+
+  getAlbumById(albumId: number) {
+    // for (var i = 0; i <= ALBUMS.length - 1; i++) {
+    //   if (ALBUMS[i].id === albumId) {
+    //     return ALBUMS[i];
+    //   }
+    // }
+  }
+
+  // getContentByBoardId() {
+
+  // }
 }
 
 // Observable is a type of design pattern. In this design pattern, a thing being observed notifies anything observing 
