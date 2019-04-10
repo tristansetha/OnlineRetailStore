@@ -28,9 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Setup
 
-create a file in the app director called 
+create a file in the app directory called 
 ```
-api-keys.ts
+src/app/api-keys.ts
 ```
 ```
 export const masterFirebaseConfig = {
