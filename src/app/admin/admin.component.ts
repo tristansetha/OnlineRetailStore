@@ -11,9 +11,8 @@ import { AlbumService } from '../album.service';
 
 })
 export class AdminComponent implements OnInit {
-  albumService: AlbumService;
 
-  constructor() { }
+  constructor(private albumService: AlbumService) { }
 
   ngOnInit() {
   }
@@ -22,5 +21,4 @@ export class AdminComponent implements OnInit {
     var newAlbum: Album = new Album(title, artist, description);
     this.albumService.addAlbum(newAlbum);
   }
-
 }
